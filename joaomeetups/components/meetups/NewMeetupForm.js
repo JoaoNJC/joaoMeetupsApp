@@ -62,4 +62,4 @@ const NewMeetupForm = (props) => {
   )
 }
 
-export default NewMeetupForm
+export default NewMeetupForm;

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
@@ -8,10 +9,10 @@ const MainNavigation = () => {
       <nav>
         <ul>
           <li>
-            <Link to='/'>All My Meetups</Link>
+            <Link href='/'>All My Meetups</Link>
           </li>
           <li>
-            <Link to='/'>Schedule a Meeting</Link>
+            <Link href='/'>Schedule a Meeting</Link>
           </li>
         </ul>
       </nav>
