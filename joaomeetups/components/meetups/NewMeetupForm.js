@@ -1,16 +1,15 @@
 import { useRef } from 'react';
 
 import Card from '../UI/Card';
-import classes from './NewMeetupForm';
+import classes from './NewMeetupForm.module.css';
 
-const NewMeetupForm = (props) => {
-
+function NewMeetupForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
   const descriptionInputRef = useRef();
 
-  const submitHandler = (event) => {
+  function submitHandler(event) {
     event.preventDefault();
 
     const enteredTitle = titleInputRef.current.value;
@@ -22,24 +21,22 @@ const NewMeetupForm = (props) => {
       title: enteredTitle,
       image: enteredImage,
       address: enteredAddress,
-      description: enteredDescription
-    }
+      description: enteredDescription,
+    };
 
-    props.onAddMeetup(meetupData)
-
+    props.onAddMeetup(meetupData);
   }
-
 
   return (
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor='title'>Meeting Title</label>
+          <label htmlFor='title'>Meetup Title</label>
           <input type='text' required id='title' ref={titleInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='image'>Meetup Image</label>
-          <input type='url' required id='address' ref={addressInputRef} />
+          <input type='url' required id='image' ref={imageInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='address'>Address</label>
@@ -55,11 +52,11 @@ const NewMeetupForm = (props) => {
           ></textarea>
         </div>
         <div className={classes.actions}>
-          <button>Add Meeting</button>
+          <button>Add Meetup</button>
         </div>
       </form>
     </Card>
-  )
+  );
 }
 
 export default NewMeetupForm;
